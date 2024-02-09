@@ -92,7 +92,7 @@ def glitcher_lines(image_path,i):
     img = Image.open(image_path)
     if img.mode != 'L':
         img = img.convert('L')
-    glitch_img = glitcher.glitch_image(img, 8)
+    glitch_img = glitcher.glitch_image(img, 2)
     glitch_img = glitch_img.convert('L')
     
     output_path = 'C:\\Users\\yashas\\final_project\\selected_frames\\'+'glitched_image'+ str(i)+'.jpg'
@@ -157,6 +157,20 @@ def predict():
             add_salt_and_pepper_noise(destination_path,i)
             apply_motion_blur(destination_path,i)
             glitcher_lines(destination_path,i)
+        
+        files = os.listdir('C:\\Users\\yashas\\final_project\\selected_frames')
+        for file_name in files:
+            file_path = os.path.join('C:\\Users\\yashas\\final_project\\selected_frames', file_name)
+
+        # Check if the file name contains 'frame'
+            if 'frame' in file_name:
+                try:
+                # Remove the file
+                    os.remove(file_path)
+                   
+                except OSError as e:
+                    print(f"Error removing {file_name}: {e}")
+
             
 
         
@@ -166,10 +180,3 @@ if __name__ == '__main__':
     app.run(port=3000, debug=True)
     
 
-
-        
-    cap.release()
-    return render_template('index.html')
-if __name__ == '__main__':
-    app.run(port=3000, debug=True)
-    
