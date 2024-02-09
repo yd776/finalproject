@@ -18,7 +18,7 @@ app = Flask(__name__)
 
 #defining the different type of noise functions
 
-def normal_noise(source):
+def normal_noise(source,i):
     img = cv2.imread(source, 0)
     if img is None:
         print(f"Error: Unable to open the image at '{source}'")
@@ -31,11 +31,11 @@ def normal_noise(source):
     n = np.random.uniform(a, b, (x, y))
     noise_img = img + n
     noise_img = np.clip(noise_img, 0, 1)
-
-    cv2.imwrite(source, img_as_ubyte(noise_img))
+    output_path = 'C:\\Users\\yashas\\final_project\\selected_frames\\noise'
+    cv2.imwrite(output_path+str(i)+'.jpg', img_as_ubyte(noise_img))
 
 #salt and pepper noise
-def add_salt_and_pepper_noise(file_path, pepper=0.1, salt=0.95):
+def add_salt_and_pepper_noise(file_path,k, pepper=0.1, salt=0.95):
     img = cv2.imread(file_path, 0)
 
     x, y = img.shape
@@ -53,12 +53,15 @@ def add_salt_and_pepper_noise(file_path, pepper=0.1, salt=0.95):
 
     g_normalized = g / 255.0
     g_uint8 = img_as_ubyte(g_normalized)
+    output_path = 'C:\\Users\\yashas\\final_project\\selected_frames\\salt and pepper'
 
-    cv2.imwrite(file_path, g_uint8)    
+
+    cv2.imwrite(output_path+str(k)+'.jpg', g_uint8)    
 
 #adding the blurred function
     
-def apply_motion_blur(input_path, output_path='blurred_image.jpg', T=0.5, a=0.05, b=0):
+def apply_motion_blur(input_path,i, output_path = 'C:\\Users\\yashas\\final_project\\selected_frames\\blur'
+, T=0.5, a=0.05, b=0):
     f = cv2.imread(input_path, 0)
     F = np.fft.fft2(f)
 
@@ -77,18 +80,24 @@ def apply_motion_blur(input_path, output_path='blurred_image.jpg', T=0.5, a=0.05
     g_normalized = (g - np.min(g)) / (np.max(g) - np.min(g))
     g_uint8 = img_as_ubyte(g_normalized)
 
-    cv2.imwrite(output_path, g_uint8, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
+    cv2.imwrite(output_path+str(i)+'.jpg', g_uint8, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
 
 
 
 # New function for glitching
     
-def glitcher_lines(image_path):
+def glitcher_lines(image_path,i):
+    
     glitcher=ImageGlitcher()
     img = Image.open(image_path)
-    glitch_img = glitcher.glitch_image(img, 2)
+    if img.mode != 'L':
+        img = img.convert('L')
+    glitch_img = glitcher.glitch_image(img, 8)
     glitch_img = glitch_img.convert('L')
-    glitch_img.save('glitched_image.jpg')
+    
+    output_path = 'C:\\Users\\yashas\\final_project\\selected_frames\\'+'glitched_image'+ str(i)+'.jpg'
+
+    glitch_img.save(output_path)
 
 
 
@@ -132,18 +141,31 @@ def predict():
         images_to_move = random.sample(image_files, num_images_to_move)
         if not os.path.exists(output_folder_path):
             os.makedirs(output_folder_path)
+        i=0
         for image_to_move in images_to_move:
+            i=i+1
             destination_path = os.path.join(output_folder_path, os.path.basename(image_to_move))
             # Handle existing files by adding a suffix or unique identifier
             if os.path.exists(destination_path):
                 base, ext = os.path.splitext(os.path.basename(image_to_move))
                 destination_path = os.path.join(output_folder_path, f'{base}_duplicate{ext}')
-            shutil.move(image_to_move, destination_path)
+            
             # Call noise function for each moved image
-            normal_noise(destination_path)
-            add_salt_and_pepper_noise(destination_path)
-            apply_motion_blur(destination_path)
-            glitcher_lines(destination_path)
+            shutil.move(image_to_move, destination_path)
+            
+            normal_noise(destination_path,i)
+            add_salt_and_pepper_noise(destination_path,i)
+            apply_motion_blur(destination_path,i)
+            glitcher_lines(destination_path,i)
+            
+
+        
+    cap.release()
+    return render_template('index.html')
+if __name__ == '__main__':
+    app.run(port=3000, debug=True)
+    
+
 
         
     cap.release()
