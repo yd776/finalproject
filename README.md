@@ -59,7 +59,8 @@ The proposed method follows the following steps:
 * Taking 20% of the frames to be formated and modified by using different vector calculations to add glitches and noises to be added in the training datset , so that our overall dataset increases with reusing.
 * The frames are then classified one by one suing a CNN model into two classes either glitched or not glitched.
 * The final result is then shown to the user on the screen along with the frame that has been identified as glitched.
-* The planned final project is planned be able to give a numeric quantity 
+* The planned final project is planned be able to give a numeric quantity as well.
+
 
 
 ### UML DIAGRAM
