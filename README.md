@@ -59,16 +59,31 @@ The proposed method follows the following steps:
 * Taking 20% of the frames to be formated and modified by using different vector calculations to add glitches and noises to be added in the training datset , so that our overall dataset increases with reusing.
 * The frames are then classified one by one suing a CNN model into two classes either glitched or not glitched.
 * The final result is then shown to the user on the screen along with the frame that has been identified as glitched.
-* The planned final project is planned be able to give a numeric quantity as well.
+* The planned final project is planned be able to give a numeric quantity as well on the amount of glitchiness.
 
 
 
-### UML DIAGRAM
+### INSTALLATION 
+
+* Download the ML model mentioned above in the github repository above
+* Create a local folder on your VS code and add the followinf files
+** APP.PY
+** INDEX.HTML
+
+
+* Run app.py on your vs local and open the local 3000 local host on your browser.
+* Upload the video that you want to get result of
+* Update the result to the user in index.html
+  
+
+
+### UML DIAGRAM :
 
 
 ### Language used 👩‍💻
 * Python
-* Flask
+* Flask 
+* HTML <>
 
 ### Libraries used 📚
 
