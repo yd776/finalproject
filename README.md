@@ -30,6 +30,14 @@ The glitched frames have the following type of noises:
 * NOISY
 * HAZY
 
+### OBJECTIVE OF THE PROJECT :grey_question:
+
+The main objective of the project was to create an ML model based on CNN (Convolutional Neural Network).
+We created our ML model based on our dataset created 
+to be able to analyse video files frame by frame and can test the quality based on the output provided by the classification model.
+
+
+
 
 ### Language used 👩‍💻
 * Python
