@@ -44,6 +44,25 @@ The major issue faced was the unavailabilty of a large enough dataset to train a
 
 We used many vecor operations to add different types of glitches and noises to the vector format of the images using the numpy libraries, The process involved transormations,
 
+### SCOPE AND APPLICATION
+
+### ARCHITECTURE
+
+### PROPOSED MODULES AND ALGORITHM DESCRIPTION
+
+
+The proposed method follows the following steps:
+
+
+* Procuring the video from the user using a flask webpage stored in the local drive using selection feature.
+* Converting the received video into individual frames and storing them locally in a frames directory.
+* Taking 20% of the frames to be formated and modified by using different vector calculations to add glitches and noises to be added in the training datset , so that our overall dataset increases with reusing.
+* The frames are then classified one by one suing a CNN model into two classes either glitched or not glitched.
+* The final result is then shown to the user on the screen along with the frame that has been identified as glitched.
+* The planned final project is planned be able to give a numeric quantity 
+
+
+### UML DIAGRAM
 
 
 ### Language used 👩‍💻
