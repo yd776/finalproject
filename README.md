@@ -14,5 +14,18 @@ technology and that is effective in challenging and benchmarking objective VQA a
 With the increase in computation technology in the past decade and the advancement of AI ad ML technologies.Our objective is to create an ML model that will be able to 
 analyse the quality of each frame in a video file.
 
+### PREVIOUS TECHNIQUES :information_desk_person:
+
+### CHALLENGES FACED :anguished:
+
+The main challenge faced was the creation of a dataset containing all different types of glitches as there are less number of publically available datasets containg 
+different types of glitches and noise.
+
+The dataset we have created contains more than 18000 images divided into 2 classes glitched and not glitched.
+
+The glitched frames have the following type of noises:
+
+
+
 
 
