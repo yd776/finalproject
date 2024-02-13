@@ -25,6 +25,24 @@ The dataset we have created contains more than 18000 images divided into 2 class
 
 The glitched frames have the following type of noises:
 
+* LAPLACIAN
+* SALT AND PEPPER
+* NOISY
+* HAZY
+
+
+### Language used 👩‍💻
+* Python
+* Flask
+
+### Libraries used 📚
+
+
+
+### Team Members 🧑
+1. Yashas Dewan
+2. Mihir Singh Malik
+3. Dr.G.Vdivu (Guide)
 
 
 
