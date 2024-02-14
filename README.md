@@ -87,12 +87,24 @@ The proposed method follows the following steps:
 
 ### Libraries used 📚
 
+* Flask: A web framework for building web applications.
+* os: Provides a way to interact with the operating system, such as working with files and directories.
+* cv2 (OpenCV): A computer vision library for image processing and computer vision tasks.
+* glob: Used for file path pattern matching.
+*shutil: Provides utility functions for file operations.
+* random: For generating random numbers or making random selections.
+* numpy: A library for numerical computations and array manipulation.
+* skimage: Part of the scikit-image library, used for image processing.
+* PIL (Pillow): Python Imaging Library, used for working with images.
+* ImageGlitcher (from glitch_this): A library for creating glitch art from images.
+
 
 
 ### Team Members 🧑
 1. Yashas Dewan
 2. Mihir Singh Malik
 3. Dr.G.Vdivu (Guide)
+
 
 
 
