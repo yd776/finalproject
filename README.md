@@ -80,7 +80,7 @@ The proposed method follows the following steps:
 ### UML DIAGRAM :
 
 
-### Language used 👩‍💻
+### Languages used 👩‍💻
 * Python
 * Flask 
 * HTML <>
