@@ -16,6 +16,16 @@ analyse the quality of each frame in a video file.
 
 ### PREVIOUS TECHNIQUES :information_desk_person:
 
+### MOTIVATION 
+
+The original project was proposed by LG Soft India to be implemnted in TV's.
+
+An increase in video services over the past decade examples include(Youtube,Netflix, Hotstar) And the availability of affordable data to use these services by the general population
+
+An increase in AI technologies in every field of our lives including home appliances ,smart home systems ,healtchare etc.
+
+
+
 ### CHALLENGES FACED :anguished:
 
 The main challenge faced was the creation of a dataset containing all different types of glitches as there are less number of publically available datasets containg 
