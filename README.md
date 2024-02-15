@@ -42,7 +42,7 @@ The original idea was part on a research project given by LGSI (LG soft India), 
 
 The major issue faced was the unavailabilty of a large enough dataset to train a model on.To solve this problem we had to create our own datset by applying different types of glitches and noises on different videos to form a large enough dataset conating 18000 frames for training our CNN model.
 
-We used many vecor operations to add different types of glitches and noises to the vector format of the images using the numpy libraries, The process involved transormations,
+We used many vecor operations to add different types of glitches and noises to the vector format of the images using the numpy libraries, The process involved transormations,dot products ,scaler multiplications etc.
 
 ### SCOPE AND APPLICATION
 
