@@ -78,6 +78,8 @@ The proposed method follows the following steps:
 
 
 ### UML DIAGRAM :
+![](https://github.com/yd776/finalproject/blob/869c4f0ebe570a9b13d1232d28e7babf5005e82a/Screenshot%202024-02-14%20122058.png) 
+
 
 
 ### Languages used 👩‍💻
