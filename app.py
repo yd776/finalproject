@@ -1,7 +1,6 @@
-
 #importing all the libraries 
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,redirect, url_for,jsonify
 import os
 import cv2
 import glob
@@ -11,10 +10,16 @@ import numpy as np
 from skimage import img_as_ubyte
 from PIL import Image
 from glitch_this import ImageGlitcher
+import tensorflow as tf
+from tensorflow.keras.models import load_model
 
 
 
 app = Flask(__name__)
+
+saved_model_path = r'C:\Users\yashas\final_project\imageclassifier.h5'
+loaded_model = load_model(saved_model_path)
+
 
 #defining the different type of noise functions
 
@@ -104,6 +109,27 @@ def glitcher_lines(image_path,i,to_be):
 
     glitch_img.save(output_path)
 
+def run_ai_model():
+    # Load the saved model
+    saved_model_path = r'C:\Users\yashas\final_project\imageclassifier.h5'
+    loaded_model = load_model(saved_model_path)
+
+    # Load and preprocess a new image
+    image_path = r'C:\Users\yashas\final_project\glitched\blur1Broken TV Screen effects  Noise Effect  Morphing Glitch fx.mp4.jpg'
+    img = tf.keras.preprocessing.image.load_img(image_path, target_size=(256, 256))
+    img_array = tf.keras.preprocessing.image.img_to_array(img)
+    preprocessed_img = np.expand_dims(img_array / 255, axis=0)
+
+    # Make predictions
+    predictions = loaded_model.predict(preprocessed_img)
+
+    # Interpret predictions
+    if predictions > 0.5:
+        result = 'Predicted class is not glitched'
+    else:
+        result = 'Predicted class is Blurred'
+
+    return result
 
 
 #flask functions
@@ -162,10 +188,10 @@ def predict():
             # Call noise function for each moved image
             shutil.move(image_to_move, destination_path)
             
-            normal_noise(destination_path,i,to_be)
-            add_salt_and_pepper_noise(destination_path,i,to_be)
-            apply_motion_blur(destination_path,i,to_be)
-            glitcher_lines(destination_path,i,to_be)
+            #normal_noise(destination_path,i,to_be)
+            #add_salt_and_pepper_noise(destination_path,i,to_be)
+            #apply_motion_blur(destination_path,i,to_be)
+            #glitcher_lines(destination_path,i,to_be)
         
         files = os.listdir('C:\\Users\\yashas\\final_project\\selected_frames')
         for file_name in files:
@@ -185,9 +211,21 @@ def predict():
     message = "Dataset has been formed successfully!"
 
     cap.release()
-    return render_template('index.html', message=message)
+    #return render_template('index.html', message=message)
+    return redirect(url_for('modify'), code=301)
+
+@app.route('/modify')
+def modify():
+    # Render the modify.html page
+    return render_template('modify.html')
+
+@app.route('/run_analysis')
+def run_analysis():
+    result = run_ai_model()
+    return result
+
+
+
 if __name__ == '__main__':
     app.run(port=3000, debug=True)
     
-
-
