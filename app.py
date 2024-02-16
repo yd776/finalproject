@@ -18,7 +18,7 @@ app = Flask(__name__)
 
 #defining the different type of noise functions
 
-def normal_noise(source,i):
+def normal_noise(source,i,to_be):
     img = cv2.imread(source, 0)
     if img is None:
         print(f"Error: Unable to open the image at '{source}'")
@@ -32,10 +32,11 @@ def normal_noise(source,i):
     noise_img = img + n
     noise_img = np.clip(noise_img, 0, 1)
     output_path = 'C:\\Users\\yashas\\final_project\\selected_frames\\noise'
-    cv2.imwrite(output_path+str(i)+'.jpg', img_as_ubyte(noise_img))
+
+    cv2.imwrite(output_path+str(i)+to_be+'.jpg', img_as_ubyte(noise_img))
 
 #salt and pepper noise
-def add_salt_and_pepper_noise(file_path,k, pepper=0.1, salt=0.95):
+def add_salt_and_pepper_noise(file_path,k,to_be, pepper=0.1, salt=0.95):
     img = cv2.imread(file_path, 0)
 
     x, y = img.shape
@@ -53,15 +54,17 @@ def add_salt_and_pepper_noise(file_path,k, pepper=0.1, salt=0.95):
 
     g_normalized = g / 255.0
     g_uint8 = img_as_ubyte(g_normalized)
+    
+
     output_path = 'C:\\Users\\yashas\\final_project\\selected_frames\\salt and pepper'
 
 
-    cv2.imwrite(output_path+str(k)+'.jpg', g_uint8)    
+
+    cv2.imwrite(output_path+str(k)+to_be+'.jpg', g_uint8)    
 
 #adding the blurred function
     
-def apply_motion_blur(input_path,i, output_path = 'C:\\Users\\yashas\\final_project\\selected_frames\\blur'
-, T=0.5, a=0.05, b=0):
+def apply_motion_blur(input_path,i,to_be, output_path = 'C:\\Users\\yashas\\final_project\\selected_frames\\blur' , T=0.5, a=0.05, b=0):
     f = cv2.imread(input_path, 0)
     F = np.fft.fft2(f)
 
@@ -80,13 +83,13 @@ def apply_motion_blur(input_path,i, output_path = 'C:\\Users\\yashas\\final_proj
     g_normalized = (g - np.min(g)) / (np.max(g) - np.min(g))
     g_uint8 = img_as_ubyte(g_normalized)
 
-    cv2.imwrite(output_path+str(i)+'.jpg', g_uint8, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
+    cv2.imwrite(output_path+str(i)+to_be+'.jpg', g_uint8, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
 
 
 
 # New function for glitching
     
-def glitcher_lines(image_path,i):
+def glitcher_lines(image_path,i,to_be):
     
     glitcher=ImageGlitcher()
     img = Image.open(image_path)
@@ -95,7 +98,9 @@ def glitcher_lines(image_path,i):
     glitch_img = glitcher.glitch_image(img, 2)
     glitch_img = glitch_img.convert('L')
     
-    output_path = 'C:\\Users\\yashas\\final_project\\selected_frames\\'+'glitched_image'+ str(i)+'.jpg'
+    
+
+    output_path = 'C:\\Users\\yashas\\final_project\\selected_frames\\'+'glitched_image'+ str(i)+to_be+'.jpg'
 
     glitch_img.save(output_path)
 
@@ -111,7 +116,11 @@ def hello_word():
 @app.route('/', methods=['POST'])
 
 def predict():
+
+    global message
     videofile= request.files['videofile']
+    to_be = str(videofile.filename)
+    to_be = "".join(c for c in to_be if c.isalnum() or c in (' ', '.', '_')).rstrip()
     image_path = "./images/" + videofile.filename
     videofile.save(image_path)
     print(image_path)
@@ -124,7 +133,7 @@ def predict():
         ret, frame = cap.read()
         if ret:
             frame_count += 1
-            frame_filename = os.path.join(output_dir, f'frame_{frame_count:04d}.jpg')
+            frame_filename = os.path.join(output_dir, f'frame_{frame_count:04d}'+to_be+'.jpg')
             cv2.imwrite(frame_filename, frame)
         else:
             break
@@ -153,10 +162,10 @@ def predict():
             # Call noise function for each moved image
             shutil.move(image_to_move, destination_path)
             
-            normal_noise(destination_path,i)
-            add_salt_and_pepper_noise(destination_path,i)
-            apply_motion_blur(destination_path,i)
-            glitcher_lines(destination_path,i)
+            normal_noise(destination_path,i,to_be)
+            add_salt_and_pepper_noise(destination_path,i,to_be)
+            apply_motion_blur(destination_path,i,to_be)
+            glitcher_lines(destination_path,i,to_be)
         
         files = os.listdir('C:\\Users\\yashas\\final_project\\selected_frames')
         for file_name in files:
@@ -173,10 +182,12 @@ def predict():
 
             
 
-        
+    message = "Dataset has been formed successfully!"
+
     cap.release()
-    return render_template('index.html')
+    return render_template('index.html', message=message)
 if __name__ == '__main__':
     app.run(port=3000, debug=True)
     
+
 
