@@ -96,6 +96,7 @@ The proposed method follows the following steps:
 * Python
 * Flask 
 * HTML <>
+* Javascrpt
 
 ### Libraries used 📚
 
