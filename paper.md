@@ -1,6 +1,10 @@
 #  Abstract
 
-This paper presents 
+Video streaming is a common service used now a days from streaming services from Netflix,Disney,Amazon Prime to Live video calls
+using whatsapp and facetime. With the increase in computation power and the need for best end user experience there should be a
+method to test and analyze video quality of video files.In our work we have created a large free public dataset contaning 
+thousands of glitched frames and have trained a model using Convolutional Neural Network to detect the wheather a frame in a video input 
+is glitched or not.
 
 #  I Introduction
 
