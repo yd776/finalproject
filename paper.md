@@ -1,14 +1,13 @@
 #  Abstract
 
 Video streaming is a common service used now a days from streaming services from Netflix,Disney,Amazon Prime to Live video calls
-using whatsapp and facetime. With the increase in computation power and the need for best end user experience there should be a
-method to test and analyze video quality of video files.In our work we have created a large free public dataset contaning 
-thousands of glitched frames and have trained a model using Convolutional Neural Network to detect the wheather a frame in a video input 
-is glitched or not.
+using whatsapp and facetime. With the increase in computation power and the need for best end user experience there should be a method to test and analyze video quality of video files.In our work we have created a large free public dataset contaning  thousands of glitched frames and have trained a model using Convolutional Neural Network to detect the wheather a frame in a video input is glitched or not.
 
 #  I Introduction
 
-The application of methods based on Deep Learning(DL) in our daily lives has opened a wide range of cognitive features in many directions that go way beyond the standard analysis of trends and regression models.
+The application of methods based on Deep Learning(DL) in our daily lives has opened a wide range of cognitive features in many directions that go way beyond the standard analysis of trends data trends and regression models. It has opened a whole new extent of capabilities that includes face detection and classification of objects. New platforms and development techniques have allowed us to view our data differently and apply technology in our daily lives from samrt phones to smart doors we are implementing technology in all aspects of our lives.
+
+But the impact of DL techniques did not stay confined to these functionalities 
 
 It has provided a whole new realm of possibilities in the fiels
 
