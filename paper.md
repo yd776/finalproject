@@ -9,7 +9,12 @@ Video streaming is a common service utilized in todays times, ranging from popul
 The integration of Deep Learning (DL) methods into our daily lives has significantly expanded cognitive features beyond conventional data analysis and regression models. This technological shift extends capabilities to include face detection and object classification, impacting various facets of our routines. Emerging platforms and innovative development techniques enable us to perceive and apply technology in novel ways, from smartphones to smart doors, thereby transforming our interaction with data.
 However, the influence of DL techniques extends beyond these functionalities. It presents a myriad of possibilities in fields where its application goes beyond traditional data analysis. In this context, our focus is on the burgeoning demand for entertainment content consumption, exemplified by the widespread use of video services.
 
+## 1.2 Evolution
 
+## 1.3 Background and motivation
+
+
+The surge in video services like YouTube, Netflix, and Hotstar, coupled with affordable data accessibility, has revolutionized entertainment consumption in the past decade. Simultaneously, the widespread integration of AI technologies across domains, from home appliances to healthcare, signifies a broader technological shift. The evolving landscape of smart home systems and AI-powered healthcare solutions reflects a paradigm change in our interaction with technology. Furthermore, continuous innovations in media devices, now equipped with unprecedented computational power, create exciting possibilities. These converging trends motivate us to explore ways in exploration and enhancement of video services.
 
 
 # II Literature survey
