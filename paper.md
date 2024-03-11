@@ -19,6 +19,9 @@ However, the influence of DL techniques extends beyond these functionalities. It
 # IV Methodology
 
   ## 4.1 Dataset description
+
+  The dataset we have created comprises of 8000 individual frames created from n videos ranging from basic videos to 
+  
   ## 4.2 Dataset creation
   ## 4.3 Glitching maths
   ## 4.4 Total creation
