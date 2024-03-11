@@ -13,8 +13,9 @@ However, the influence of DL techniques extends beyond these functionalities. It
 
 ## 1.3 Background and motivation
 
-
 The surge in video services like YouTube, Netflix, and Hotstar, coupled with affordable data accessibility, has revolutionized entertainment consumption in the past decade. Simultaneously, the widespread integration of AI technologies across domains, from home appliances to healthcare, signifies a broader technological shift. The evolving landscape of smart home systems and AI-powered healthcare solutions reflects a paradigm change in our interaction with technology. Furthermore, continuous innovations in media devices, now equipped with unprecedented computational power, create exciting possibilities. These converging trends motivate us to explore ways in exploration and enhancement of video services.
+
+## 1.4 
 
 
 # II Literature survey
@@ -25,9 +26,24 @@ The surge in video services like YouTube, Netflix, and Hotstar, coupled with aff
 
   ## 4.1 Dataset description
 
-  The dataset we have created comprises of 8000 individual frames created from n videos ranging from basic videos to 
+  The dataset we have created comprises of 18000 individual frames created from 17 videos.The datset is divided into two subparts namely "Glitched" and "Not Glitched". The "Glitched dataset consists of the following noises/glitch types:
+
+  ### static noise
+  ### salt and pepper noise
+  ### Glitch and glow noise
+  ### Bright interference noise
+  ### Pixelated image noise
+  ### 
+  ###
+  ###
+  ###
+
+  
+  
   
   ## 4.2 Dataset creation
+
+  The creation of the dataset 
   ## 4.3 Glitching maths
   ## 4.4 Total creation
   ## 4.5 Preprocessing
