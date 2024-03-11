@@ -1,15 +1,14 @@
 #  Abstract
 
-Video streaming is a common service used now a days from streaming services from Netflix,Disney,Amazon Prime to Live video calls
-using whatsapp and facetime. With the increase in computation power and the need for best end user experience there should be a method to test and analyze video quality of video files.In our work we have created a large free public dataset contaning  thousands of glitched frames and have trained a model using Convolutional Neural Network to detect the wheather a frame in a video input is glitched or not.
+Video streaming is a common service utilized in todays times, ranging from popular platforms such as Netflix, Disney, and Amazon Prime to live video calls facilitated by WhatsApp and FaceTime. Given the growing computational capabilities and the imperative of delivering optimal end-user experiences, there arises a necessity to develop methods for testing and analyzing the video quality of streaming content. In our research, we propose a method for analyzing the same as well as a substantial publicly available dataset comprising thousands of distorted frames. We employ a Convolutional Neural Network (CNN) to train a model for discerning whether a frame in a video input is glitched or not, addressing the imperative of ensuring seamless video playback and enhanced user satisfaction.
 
 #  I Introduction
 
-The application of methods based on Deep Learning(DL) in our daily lives has opened a wide range of cognitive features in many directions that go way beyond the standard analysis of trends data trends and regression models. It has opened a whole new extent of capabilities that includes face detection and classification of objects. New platforms and development techniques have allowed us to view our data differently and apply technology in our daily lives from samrt phones to smart doors we are implementing technology in all aspects of our lives.
+## 1.1 overview
 
-But the impact of DL techniques did not stay confined to these functionalities 
+The integration of Deep Learning (DL) methods into our daily lives has significantly expanded cognitive features beyond conventional data analysis and regression models. This technological shift extends capabilities to include face detection and object classification, impacting various facets of our routines. Emerging platforms and innovative development techniques enable us to perceive and apply technology in novel ways, from smartphones to smart doors, thereby transforming our interaction with data.
+However, the influence of DL techniques extends beyond these functionalities. It presents a myriad of possibilities in fields where its application goes beyond traditional data analysis. In this context, our focus is on the burgeoning demand for entertainment content consumption, exemplified by the widespread use of video services.
 
-It has provided a whole new realm of possibilities in the fiels
 
 
 
