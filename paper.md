@@ -28,11 +28,10 @@ The surge in video services like YouTube, Netflix, and Hotstar, coupled with aff
 
   The dataset we have created comprises of 18000 individual frames created from 17 videos.The datset is divided into two subparts namely "Glitched" and "Not Glitched". The "Glitched dataset consists of the following noises/glitch types:
 
-  ### static noise
-  ### salt and pepper noise
-  ### Glitch and glow noise
-  ### Bright interference noise
-  ### Pixelated image noise
+  ####  Static noise: Static noise is the abscence of coherent signals(Pair of optical signals that have the same frequency and that maintain a constant offset) meaning dozens of frequencies mices together.
+  #### Salt and pepper noise :Salt and pepper noise is a form of noise sometimes seen on digital images. It presents itself as sparsely occuring black and white pixels on a still image.
+  #### Extreme white images: Extreme bright interference in images 
+  ### Pixelated image noise: Pixel drops in images 
   ### 
   ###
   ###
