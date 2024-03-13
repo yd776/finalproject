@@ -17,6 +17,19 @@ The surge in video services like YouTube, Netflix, and Hotstar, coupled with aff
 
 ## 1.4 
 
+# INRO
+
+Introduction:
+
+The integration of Deep Learning (DL) methodologies has catalyzed a significant paradigm shift in modern society, augmenting cognitive capabilities beyond traditional data analysis frameworks. With applications ranging from face detection to object classification, DL technologies have permeated various aspects of daily life, profoundly influencing how individuals interact with data. This technological evolution extends beyond conventional boundaries, with DL's impact increasingly felt in domains where its utilization transcends conventional data processing paradigms. In this context, our research focuses on the burgeoning realm of entertainment content consumption, exemplified by the widespread adoption of video streaming services.
+
+Over the past decade, the landscape of entertainment consumption has undergone a transformative metamorphosis, fueled by the proliferation of video services such as YouTube, Netflix, and Hotstar. Concurrently, the democratization of data accessibility has empowered individuals from diverse backgrounds to engage with these services as a primary source of entertainment. This shift underscores a fundamental change in how society interacts with media, marked by an unprecedented fusion of technology and entertainment.
+
+Moreover, the pervasive integration of Artificial Intelligence (AI) technologies across various sectors, including home automation and healthcare, signals a broader technological revolution. The emergence of smart home systems and AI-driven healthcare solutions epitomizes this paradigmatic shift, highlighting the transformative potential of AI in enhancing daily living experiences. Additionally, continuous advancements in media devices, boasting unparalleled computational capabilities, herald a new era of innovation and possibility in the realm of entertainment technology.
+
+However, amidst this technological progress, significant challenges and limitations persist. The creation of comprehensive datasets containing diverse glitches and noise types remains a formidable challenge, compounded by the scarcity of publicly available datasets in this domain. Our research addresses this challenge by meticulously curating a dataset comprising over 18,000 images, categorized into glitched and non-glitched classes. Furthermore, existing Video Quality Assessment (VQA) algorithms suffer from limited understanding, real-time processing constraints, and a lack of large, freely available datasets for training and evaluation purposes. These limitations underscore the critical need for robust methodologies and tools for video quality analysis, which our research endeavors to address.
+
+Driven by these converging trends, our research endeavors to explore and enhance the landscape of video services by leveraging cutting-edge DL methodologies. Through the creation of open-source datasets encompassing various glitches and the development of Convolutional Neural Network (CNN)-based DL models, our objective is to comprehensively analyze video quality and contribute to the ongoing evolution of entertainment technology. By elucidating the need for video quality analysis and synthesizing our findings across diverse service platforms, we aim to propel the field towards new frontiers of exploration and innovation.
 
 # II Literature survey
 
