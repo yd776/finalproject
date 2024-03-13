@@ -55,6 +55,8 @@ By integrating these transformations, our dataset reflects a spectrum of anomali
 To form our dataset, we procured 10 video files in the .mp4 format. These videos were first converted into individual frames. Subsequently, a random selection process was employed, where 20% of these frames were subjected to various types of noise and glitches using laplacian functions and Python libraries. This step aimed to introduce variability and challenge into the dataset. Ultimately, our dataset consists of two distinct classes: glitched and non-glitched, each comprising 9000 individual images.
 
   ### 4.3 Classification
+
+  
   
   
   ## 4.4 Total creation
