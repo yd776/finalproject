@@ -63,6 +63,9 @@ To form our dataset, we procured 10 video files in the .mp4 format. These videos
   ## 4.5 Preprocessing
 
 # v Results and discussions
+The deep learning model acheived impressive results in classifying real time video.
+
+
 
 
 # VI REFERENCES
