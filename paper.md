@@ -26,24 +26,23 @@ The surge in video services like YouTube, Netflix, and Hotstar, coupled with aff
 
   ## 4.1 Dataset description
 
-  The dataset we have created comprises of 18000 individual frames created from 17 videos.The datset is divided into two subparts namely "Glitched" and "Not Glitched". The "Glitched dataset consists of the following noises/glitch types:
+The dataset we've created consists of 18,000 individual frames extracted from 17 videos. This dataset is categorized into two distinct subsets: "Glitched" and "Not Glitched." The "Glitched" subset encompasses various types of noise and glitches, including:
 
-  ####  Static noise: Static noise is the abscence of coherent signals(Pair of optical signals that have the same frequency and that maintain a constant offset) meaning dozens of frequencies mices together.
-  #### Salt and pepper noise :Salt and pepper noise is a form of noise sometimes seen on digital images. It presents itself as sparsely occuring black and white pixels on a still image.
-  #### Extreme white images: Extreme bright interference in images usually from background.
-  ### Pixelated image noise: Random variation of brightness or color information in images and is usually an aspect of electronic noise.
-  ### 
-  ###
-  ###
-  ###
+Laplacian Transformation: This method, derived from the Laplace distribution, was applied to induce irregularities resembling sudden and intense changes in pixel values.
 
-  
-  
-  
-  ## 4.2 Dataset creation
+Salt and Pepper Noise: By introducing random, sporadic white and black pixels, akin to salt and pepper sprinkled on an image, we mimicked the presence of impulsive noise in digital media.
 
-  The creation of the dataset 
+Noisy Transformation: Through the injection of Gaussian noise, we replicated the subtle distortions often observed in images, enhancing the dataset's diversity and robustness.
+
+Hazy Transformation: Utilizing haze simulation techniques, we replicated atmospheric interference, resulting in a blurred and obscured appearance, akin to images captured in adverse weather conditions.
+
+By integrating these transformations, our dataset reflects a spectrum of anomalies encountered in real-world scenarios, facilitating comprehensive analysis and evaluation in image processing tasks.
+  
+  ## 4.2 Dataset Creation
+To form our dataset, we procured 10 video files in the .mp4 format. These videos were first converted into individual frames. Subsequently, a random selection process was employed, where 20% of these frames were subjected to various types of noise and glitches using laplacian functions and Python libraries. This step aimed to introduce variability and challenge into the dataset. Ultimately, our dataset consists of two distinct classes: glitched and non-glitched, each comprising 9000 individual images.
+
   ## 4.3 Glitching maths
+  
   ## 4.4 Total creation
   ## 4.5 Preprocessing
 
