@@ -2,6 +2,8 @@
 
 Video streaming is a common service utilized in todays times, ranging from popular platforms such as Netflix, Disney, and Amazon Prime to live video calls facilitated by WhatsApp and FaceTime. Given the growing computational capabilities and the imperative of delivering optimal end-user experiences, there arises a necessity to develop methods for testing and analyzing the video quality of streaming content. In our research, we propose a method for analyzing the same as well as a substantial publicly available dataset comprising thousands of distorted frames. We employ a Convolutional Neural Network (CNN) to train a model for discerning whether a frame in a video input is glitched or not, addressing the imperative of ensuring seamless video playback and enhanced user satisfaction.
 
+Keywords- Classification,Neural Network ,Video quality
+
 # INTRO
 
 Introduction:
