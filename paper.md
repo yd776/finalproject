@@ -48,8 +48,7 @@ To form our dataset, we procured 10 video files in the .mp4 format. These videos
   ## 4.5 Preprocessing
 
 # v Results and discussions
-The deep learning model acheived impressive results in classifying real time video showcasing its robustness and efficiency in accurately classifying video frames for glitches and noise.Upon training the modelwith the curated datset it obtained an overall accuracy of 99.7% 
-
+The deep learning model acheived impressive results in classifying real time video showcasing its robustness and efficiency in accurately classifying video frames for glitches and noise.Upon training the modelwith the curated datset it obtained an overall accuracy of 99.7% indicating its high precission in classifying noise in video files. The precisio recall and f1 score for is xyz.Furthermore the model showcased wxceptional performance across different types of videos and the length of video files
 
 
 
