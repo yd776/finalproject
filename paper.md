@@ -41,12 +41,19 @@ By integrating these transformations, our dataset reflects a spectrum of anomali
   ### 4.2 Dataset Generation
 To form our dataset, we procured 10 video files in the .mp4 format. These videos were first converted into individual frames. Subsequently, a random selection process was employed, where 20% of these frames were subjected to various types of noise and glitches using laplacian functions and Python libraries. This step aimed to introduce variability and challenge into the dataset. Ultimately, our dataset consists of two distinct classes: glitched and non-glitched, each comprising 9000 individual images.
 
-  ### 4.3 Classification
+  ## 4.3 methodology
 
-  
-  
-  
-  ## 4.4 Total creation
+  Video Acquisition and Storage: The system collects user videos via a Flask web interface and stores them locally.
+
+Frame Extraction and Storage: The received video undergoes frame extraction, and individual frames are saved locally for analysis.
+
+Dataset Expansion: To diversify the training dataset, 20% of frames are randomly selected and augmented with glitches and noises using vector calculations.
+
+Frame Classification: Each frame, original or augmented, is classified using a Convolutional Neural Network (CNN) to determine if it's glitched or not.
+
+Result Presentation: The system displays the classification results to users, indicating glitched frames and offering a qualitative assessment of video quality.
+
+Quantification of Glitchiness: As an enhancement, the system aims to quantify glitch severity, providing users with a numeric measure of video degradation for informed decision-making
   ## 4.5 Preprocessing
 
 # v Results and discussions
