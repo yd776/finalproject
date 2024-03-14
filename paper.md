@@ -66,9 +66,7 @@ In considering future endeavors, expanding the scope of our model to accommodate
 
 
 # VI REFERENCES
-
-
-
+Done
 
 # links for internal refernce
 
