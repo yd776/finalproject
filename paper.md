@@ -41,7 +41,7 @@ By integrating these transformations, our dataset reflects a spectrum of anomali
   ### 4.2 Dataset Generation
 To form our dataset, we procured 10 video files in the .mp4 format. These videos were first converted into individual frames. Subsequently, a random selection process was employed, where 20% of these frames were subjected to various types of noise and glitches using laplacian functions and Python libraries. This step aimed to introduce variability and challenge into the dataset. Ultimately, our dataset consists of two distinct classes: glitched and non-glitched, each comprising 9000 individual images.
 
-  ## 4.3 methodology
+  ## 4.3 Proposed System
 
   Video Acquisition and Storage: The system collects user videos via a Flask web interface and stores them locally.
 
@@ -64,6 +64,7 @@ In conclusion, the implementation of AI-driven video quality analysis demonstrat
 ### Future Work
 In considering future endeavors, expanding the scope of our model to accommodate real-time video streaming presents an intriguing avenue for enhancing video quality analysis. While our current framework adeptly processes uploaded video files, extending its capabilities to seamlessly handle live streaming poses a significant yet promising challenge. By integrating real-time processing capabilities and adaptive algorithms, we can empower our model to dynamically analyze streaming content, enabling timely detection and mitigation of quality degradation issues as they occur. Furthermore it can be directly preinstalled into hardware like tv's and smartphones to beforehand predict the quality of video and providing the user with an notification regarding the cause and the solution to make it better hence increasing the overall user experience.
 
+Done
 
 # VI REFERENCES
 Done
