@@ -1,4 +1,5 @@
 #importing all the libraries 
+#importing all the libraries 
 
 from flask import Flask, render_template, request,redirect, url_for,jsonify
 import os
@@ -109,13 +110,12 @@ def glitcher_lines(image_path,i,to_be):
 
     glitch_img.save(output_path)
 
-def run_ai_model():
+def run_ai_model(image_path):
     # Load the saved model
     saved_model_path = r'C:\Users\yashas\final_project\imageclassifier.h5'
     loaded_model = load_model(saved_model_path)
 
     # Load and preprocess a new image
-    image_path = r'C:\Users\yashas\final_project\glitched\blur1Broken TV Screen effects  Noise Effect  Morphing Glitch fx.mp4.jpg'
     img = tf.keras.preprocessing.image.load_img(image_path, target_size=(256, 256))
     img_array = tf.keras.preprocessing.image.img_to_array(img)
     preprocessed_img = np.expand_dims(img_array / 255, axis=0)
@@ -125,10 +125,10 @@ def run_ai_model():
 
     # Interpret predictions
     if predictions > 0.5:
-        result = 'Predicted class is not glitched'
+        result = 'Predicted Frame is not glitched'
     else:
-        result = 'Predicted class is Blurred'
-
+        result = 'Predicted Frame is Glitched'
+    
     return result
 
 
@@ -221,11 +221,20 @@ def modify():
 
 @app.route('/run_analysis')
 def run_analysis():
-    result = run_ai_model()
-    return result
+    frames_folder = r'C:\Users\yashas\final_project\frames'
+    result_list = []
+    for filename in os.listdir(frames_folder):
+        if filename.endswith('.jpg'):
+            image_path = os.path.join(frames_folder, filename)
+            #Testing 
+            
+            # Run AI model for the current image
+            result = run_ai_model(image_path)
+
+            result_list.append(result)
+    return result_list
 
 
 
 if __name__ == '__main__':
     app.run(port=3000, debug=True)
-    
