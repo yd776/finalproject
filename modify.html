@@ -1,5 +1,7 @@
 
 <!-- modify.html -->
+
+<!-- modify.html -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -38,18 +40,18 @@
                 margin-top: 20px;
             }
         </style>
-                <script>
-                    function analyse() {
-                        // Make an AJAX request to the Flask route
-                        fetch('/run_analysis')
-                            .then(response => response.text())
-                            .then(result => {
-                                // Display the result on the page
-                                document.getElementById('result').innerText = result;
-                            })
-                            .catch(error => console.error('Error:', error));
-                    }
-                </script>
+        <script>
+            function analyse() {
+                // Make an AJAX request to the Flask route
+                fetch('/run_analysis')
+                    .then(response => response.text())
+                    .then(result => {
+                        // Display the result on the page
+                        document.getElementById('result').innerText = result;
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        </script>
     </head>
     <body>
         <h1>Modify Page</h1>
@@ -57,3 +59,4 @@
         <div id="result"></div> <!-- Display result here -->
     </body>
 </html>
+
