@@ -249,6 +249,15 @@ def next_page_html():
     # Render the nextpage.html page
     return render_template('nextpage.html')
 
+@app.route('/get_image_paths')
+def get_image_paths():
+    with open(r'C:\Users\yashas\final_project\images_ka_path.txt', 'r') as file:
+        image_paths = file.readlines()
+        image_paths = [path.strip() for path in image_paths]
+    print(image_paths)
+    return "hello from flask"
+
+
 
 
 if __name__ == '__main__':
