@@ -1,7 +1,7 @@
 #importing all the libraries 
 #importing all the libraries 
 
-from flask import Flask, render_template, request,redirect, url_for,jsonify
+from flask import Flask, render_template, request,redirect, url_for,jsonify,send_file
 import os
 import cv2
 import glob
@@ -20,6 +20,7 @@ app = Flask(__name__)
 
 saved_model_path = r'C:\Users\yashas\final_project\imageclassifier.h5'
 loaded_model = load_model(saved_model_path)
+image_paths = []
 
 
 #defining the different type of noise functions
@@ -223,16 +224,30 @@ def modify():
 def run_analysis():
     frames_folder = r'C:\Users\yashas\final_project\frames'
     result_list = []
+    global image_paths
     for filename in os.listdir(frames_folder):
         if filename.endswith('.jpg'):
             image_path = os.path.join(frames_folder, filename)
-            #Testing 
-            
-            # Run AI model for the current image
             result = run_ai_model(image_path)
+            if result=="Predicted Frame is Glitched":
+                image_paths.append(image_path)
 
             result_list.append(result)
+
+    with open(r'C:\Users\yashas\final_project\images_ka_path.txt', 'w') as file:
+        for path in image_paths:
+            file.write(path + '\n')
+    print(image_paths)
     return result_list
+
+def next_page():
+    # Redirect to nextpage.html
+    return redirect(url_for('next_page_html'))
+
+@app.route('/nextpage.html')
+def next_page_html():
+    # Render the nextpage.html page
+    return render_template('nextpage.html')
 
 
 
