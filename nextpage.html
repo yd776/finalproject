@@ -12,7 +12,7 @@
         }
 
         h1 {
-            color: black; /* Purple text color */
+            color: black; /* Black text color */
             margin-top: 20px;
         }
 
@@ -31,10 +31,26 @@
             background-color: #0056b3; /* Darker blue on hover */
         }
     </style>
+    <script>
+        function displayImages() {
+            // Make an AJAX request to get image paths
+            fetch('/get_image_paths')
+                .then(response => response.text())  // Expect plain text
+                .then(imagePaths => {
+                    // Split the plain text into an array of paths
+                    const pathsArray = imagePaths.split('\n');
+                    // Log the array for testing
+                    console.log('Image paths:', pathsArray);
+                    // You can perform further actions with the image paths here
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
 </head>
 <body>
     <h1>Click Button To display Images</h1>
     <button onclick="displayImages()">Display Images</button>
 </body>
 </html>
+
 
