@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Modify Page</title>
+    <title>Next Page</title>
     <style>
         body {
             background-color: #f5c6cb; /* Light reddish-purplish background */
@@ -12,7 +12,7 @@
         }
 
         h1 {
-            color: #6610f2; /* Purple text color */
+            color: black; /* Black text color */
             margin-top: 20px;
         }
 
@@ -30,35 +30,18 @@
         button:hover {
             background-color: #0056b3; /* Darker blue on hover */
         }
-
-        #result {
-            color: #28a745; /* Green text color for success */
-            margin-top: 20px;
-        }
     </style>
     <script>
-        function analyse() {
-            // Make an AJAX request to the Flask route
-            fetch('/run_analysis')
-                .then(response => response.text())
-                .then(result => {
-                    // Display the result on the page
-                    document.getElementById('result').innerText = result;
-                })
-                .catch(error => console.error('Error:', error));
-        }
-
-        function goToNextPage() {
-            window.location.href = 'nextpage.html';
+        function displayImages() {
+            // Send AJAX request to Flask server
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/run_script");
+            xhr.send();
         }
     </script>
 </head>
 <body>
-    <h1>Modify Page</h1>
-    <button onclick="analyse()">Analyse</button>
-    <button onclick="goToNextPage()">Go to Next Page</button>
-    <div id="result"></div> <!-- Display result here -->
+    <h1>Click Button To display Images</h1>
+    <button onclick="displayImages()">Display Images</button>
 </body>
-</html> 
-
-
+</html>
