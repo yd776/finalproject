@@ -13,6 +13,8 @@ from PIL import Image
 from glitch_this import ImageGlitcher
 import tensorflow as tf
 from tensorflow.keras.models import load_model
+import subprocess
+
 
 
 
@@ -249,13 +251,10 @@ def next_page_html():
     # Render the nextpage.html page
     return render_template('nextpage.html')
 
-@app.route('/get_image_paths')
-def get_image_paths():
-    with open(r'C:\Users\yashas\final_project\images_ka_path.txt', 'r') as file:
-        image_paths = file.readlines()
-        image_paths = [path.strip() for path in image_paths]
-    print(image_paths)
-    return "hello from flask"
+@app.route('/run_test')
+def run_script():
+    subprocess.Popen(['python', 'test.py'])
+    return 'Python script executed successfully!'
 
 
 
